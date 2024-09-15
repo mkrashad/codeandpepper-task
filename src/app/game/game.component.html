@@ -1,0 +1,72 @@
+<div class="game">
+  <h2>Star Wars Battle!</h2>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Select Resource</mat-label>
+    <mat-select [(value)]="selectedResource">
+      <mat-option value="people">People</mat-option>
+      <mat-option value="starships">Starships</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <div class="scoreboard">
+    <div>
+      <h3>Left Player</h3>
+      <p>Score: {{ leftScore }}</p>
+    </div>
+    <div>
+      <h3>Right Player</h3>
+      <p>Score: {{ rightScore }}</p>
+    </div>
+  </div>
+
+  <div *ngIf="person1 && person2 && selectedResource === 'people'">
+    <h3>People Battle</h3>
+
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>{{ person1.name }}</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <p>Mass: {{ person1.mass }}</p>
+      </mat-card-content>
+    </mat-card>
+
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>{{ person2.name }}</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <p>Mass: {{ person2.mass }}</p>
+      </mat-card-content>
+    </mat-card>
+
+    <h3>{{ winner }}</h3>
+  </div>
+
+  <div *ngIf="starship1 && starship2 && selectedResource === 'starships'">
+    <h3>Starship Battle</h3>
+
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>{{ starship1.name }}</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <p>Crew: {{ starship1.crew }}</p>
+      </mat-card-content>
+    </mat-card>
+
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>{{ starship2.name }}</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <p>Crew: {{ starship2.crew }}</p>
+      </mat-card-content>
+    </mat-card>
+
+    <h3>{{ winner }}</h3>
+  </div>
+
+  <button mat-raised-button color="primary" (click)="playGame()">Play</button>
+</div>

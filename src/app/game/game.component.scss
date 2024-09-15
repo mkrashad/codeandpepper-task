@@ -1,0 +1,45 @@
+.game {
+  text-align: center;
+}
+
+.scoreboard {
+  display: flex;
+  justify-content: space-around;
+  margin: 20px 0;
+}
+
+.card {
+  border: 1px solid #000;
+  margin: 20px;
+  padding: 10px;
+  display: inline-block;
+}
+
+button {
+  margin: 20px;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+.scoreboard div {
+  border: 1px solid #ccc;
+  padding: 20px;
+  width: 150px;
+  text-align: center;
+}
+
+.scoreboard h3 {
+  margin: 0 0 10px 0;
+}
+
+.scoreboard p {
+  font-size: 24px;
+  font-weight: bold;
+}
